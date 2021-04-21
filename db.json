@@ -20,6 +20,20 @@
       "credit": 4,
       "passed": false,
       "semester": 1
+    },
+    {
+      "courseName": "SRES",
+      "credit": "4",
+      "passed": true,
+      "semester": "2",
+      "id": 4
+    },
+    {
+      "courseName": "SQA",
+      "credit": "4",
+      "passed": false,
+      "semester": "2",
+      "id": 5
     }
   ],
   "comments": [

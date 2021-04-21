@@ -23,11 +23,31 @@ function App() {
     const data = res.json();
     return data;
   }
+
+  // Add Plan
+  const addPlan = async (plan) => {
+    const res = await fetch(`${serverURL}/plans`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(plan)
+    })
+
+    const data = await res.json();
+    setPlans([...plans, data]);
+  }
+
+
   return (
     <div className="container mx-auto">
       <Header/>
-      <AddPlan/>
-      <Plans plans={plans}/>
+      <div className='flex justify-center'>
+        <AddPlan onAdd={addPlan}/>
+      </div>
+      <div className='flex justify-center'>
+        <Plans plans={plans}/>
+      </div>
     </div>
   );
 }
