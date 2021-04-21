@@ -34,7 +34,8 @@ const AddPlan = ({ onAdd }) => {
             <label className='block' for='passed'>Passed</label>
             <input className='block' type='checkbox' value={passed} onChange={(e) => setPassed(e.currentTarget.checked)} />
 
-            <input className='' type='submit' value='Save Plan'/>
+            {/* <input className='' type='submit' value='Save Plan'/> */}
+            <button onClick={onSubmit} className='bg-blue-500 px-4 py-2 mt-2 text-xs font-semibold tracking-wider text-white rounded hover:bg-blue-600'>Click Me</button>
         </form>
     )
 }

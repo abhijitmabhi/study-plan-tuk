@@ -6,7 +6,8 @@ import AddPlan from './components/AddPlan'
 
 
 function App() {
-  const [plans, setPlans] = useState([])
+  const [showAdd, setshowAdd] = useState(false);
+  const [plans, setPlans] = useState([]);
   const serverURL = 'http://localhost:5000';
 
   useEffect(() => {
@@ -38,15 +39,27 @@ function App() {
     setPlans([...plans, data]);
   }
 
+  // Delete Plan
+  const deletePlan = async (id) => {
+    const res = await fetch(`${serverURL}/plans/${id}`, {
+      method: 'DELETE'
+    })
+    setPlans(plans.filter((task) => task.id !== id));
+  }
+
+
+
 
   return (
     <div className="container mx-auto">
-      <Header/>
+      <Header onAdd={() => setshowAdd(!showAdd)} showAdd={showAdd}/>
       <div className='flex justify-center'>
-        <AddPlan onAdd={addPlan}/>
+        {
+          showAdd && <AddPlan onAdd={addPlan}/>
+        }
       </div>
       <div className='flex justify-center'>
-        <Plans plans={plans}/>
+        <Plans plans={plans} onDelete={deletePlan}/>
       </div>
     </div>
   );
