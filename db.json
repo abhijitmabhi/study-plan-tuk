@@ -1,0 +1,35 @@
+{
+  "plans": [
+    {
+      "id": 1,
+      "courseName": "Foundation of Software Engineering",
+      "credit": 4,
+      "passed": true,
+      "semester": 1
+    },
+    {
+      "id": 2,
+      "courseName": "Automotive Software Engineering",
+      "credit": 4,
+      "passed": true,
+      "semester": 1
+    },
+    {
+      "id": 3,
+      "courseName": "Software Project and Process Management",
+      "credit": 4,
+      "passed": false,
+      "semester": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
